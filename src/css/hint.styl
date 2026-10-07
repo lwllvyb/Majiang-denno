@@ -1,0 +1,83 @@
+/* 辽宁穷胡 — 出牌建议面板（固定浮层，避免被 #board 680px 裁切） */
+body.board #board > .hint-panel
+    display: block
+    position: fixed
+    left: 50%
+    bottom: 8px
+    transform: translateX(-50%)
+    z-index: 200
+    box-sizing: border-box
+    width: min(760px, 96vw)
+    max-height: 28vh
+    overflow: auto
+    margin: 0
+    padding: 10px 14px
+    background: linear-gradient(160deg, rgba(26, 58, 42, 0.96) 0%, rgba(15, 36, 24, 0.98) 100%)
+    border: 1px solid rgba(212, 175, 55, 0.45)
+    color: #f2efe6
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, serif
+    font-size: 13px
+    line-height: 1.5
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45)
+    .hint-head
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 6px
+        .hint-title
+            font-size: 16px
+            letter-spacing: 0.12em
+            color: #e8c547
+        .hint-toggle
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif
+            font-size: 12px
+            color: #c8c2b4
+            cursor: pointer
+            input
+                vertical-align: middle
+                margin-right: 4px
+    .hint-body
+        .hint-xiangting
+            font-size: 15px
+            color: #9ad4b0
+            margin-bottom: 4px
+        .hint-recommend
+            font-size: 14px
+            margin: 4px 0
+            .pai
+                vertical-align: middle
+                height: 28px
+                width: (28px / 7 * 5)
+        .hint-reason
+            color: #d9d3c5
+            margin-bottom: 4px
+        .hint-youxiao
+            margin: 4px 0
+            .label
+                color: #e8c547
+                margin-right: 8px
+            .youxiao-item
+                display: inline-block
+                margin-right: 8px
+                .pai
+                    height: 24px
+                    width: (24px / 7 * 5)
+                    vertical-align: middle
+                .n
+                    margin-left: 2px
+                    color: #9ad4b0
+                    font-family: Georgia, serif
+        .hint-warnings .warn
+            color: #f0a0a0
+            margin: 2px 0
+        .hint-fulou
+            color: #b8d4ff
+            margin-top: 4px
+        .hint-defense .def
+            color: #c9b896
+            margin: 2px 0
+            font-size: 12px
+
+/* title / file 页不显示 */
+body:not(.board) #board > .hint-panel
+    display: none

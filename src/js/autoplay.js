@@ -18,8 +18,9 @@ $(function(){
     const pai   = Majiang.UI.pai($('#loaddata'));
     const audio = Majiang.UI.audio($('#loaddata'));
 
-    const rule = Majiang.rule(
-                    JSON.parse(localStorage.getItem('Majiang.rule')||'{}'));
+    const rule = Majiang.rule(Object.assign({
+                    '规则类型': '辽宁穷胡',
+                }, JSON.parse(localStorage.getItem('Majiang.rule')||'{}')));
 
     let open_shoupai = false;
     let open_he      = false;

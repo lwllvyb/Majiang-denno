@@ -1,7 +1,8 @@
 body.title
-    color:      white
-    background: black
+    color:      #f2efe6
+    background: radial-gradient(ellipse at 50% 20%, #2a4a38 0%, #0c1a12 55%, #06100a 100%)
     margin: 0
+    min-height: 100vh
     #title
         display: block
     #navi
@@ -12,41 +13,54 @@ body.title
 
 #title
     display: none
-    margin: 40px auto
+    margin: 48px auto
     width: 640px
-    padding: 4px
-    border-radius: 5px
-    background: white
-    color:      black
+    padding: 28px 24px 32px
+    border: 1px solid rgba(212, 175, 55, 0.4)
+    background: linear-gradient(165deg, rgba(26, 58, 42, 0.92), rgba(12, 28, 20, 0.96))
+    color:      #f2efe6
     text-align: center
-    font-family: text-font
-    h1
-        margin: 0px
-        height: 150px
+    font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, serif
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45)
+    h1.brand
+        margin: 0 0 8px
+        height: auto
+        font-size: 64px
+        font-weight: 700
+        letter-spacing: 0.2em
+        color: #e8c547
+        text-shadow: 0 2px 0 #3a2a08
         img
             width: 600px
+    .subtitle
+        margin: 0 0 16px
+        font-size: 16px
+        letter-spacing: 0.18em
+        color: #9ad4b0
     .version
-        font-family: defen-font
-        font-size: 24px
+        font-family: Georgia, serif
+        font-size: 14px
+        color: #a89f8c
     .loading
         margin: 8px auto
-        color: #666
-        font-family: menu-font
+        color: #a89f8c
+        font-family: "PingFang SC", "Microsoft YaHei", sans-serif
         font-size: 16px
         animation: blink-text 2s infinite
     .start
-        margin: 8px auto
-        font-family: text-font
-        width: 120px
-        padding: 4px
-        border-radius: 4px
-        font-size: 16px
-        color: white
-        background: blue
+        margin: 16px auto 8px
+        font-family: "Noto Serif SC", "Songti SC", serif
+        width: 160px
+        padding: 10px 4px
+        border: 1px solid #e8c547
+        font-size: 18px
+        letter-spacing: 0.15em
+        color: #1a2e22
+        background: linear-gradient(180deg, #f0d878, #c9a227)
         cursor: pointer
         &:hover
         &:focus
-            background: #ccc
+            background: linear-gradient(180deg, #ffe9a0, #e8c547)
             outline: none
     .login
         margin: 8px auto

@@ -1,39 +1,39 @@
 #file
   h1
-    img(src="img/logo.png" alt="電脳麻将")
+    span.brand-inline 辽宁穷胡
     if page == 'paipu'
-      |  牌譜ビューア
+      |  · 牌谱查看
     if page == 'netplay'
-      |  ネット対戦
+      |  · 网络对战
   .version ver. #{version}
   
   .file.hide
 
     if page == 'index'
-      a.start 対局開始
+      a.start 开始对局
     if page == 'netplay'
       .error.hide
       .netplay
         img(src="img/icon.png" title="guest")
         span.name
         form.room
-          input(name="room_no" placeholder="ルーム")
-          input(type="submit" value="入室")
+          input(name="room_no" placeholder="房间号")
+          input(type="submit" value="进入")
         form.room
-          input(type="submit" value="ルーム作成")
+          input(type="submit" value="创建房间")
         form.logout(method="POST" action="server/logout")
-          input(type="submit" value="ログアウト")
+          input(type="submit" value="退出")
 
     if page == 'index' || page == 'netplay'
       .button
         a.stat
           img(src="img/icon-dotlist.png")
-          | 牌譜集計
+          | 牌谱统计
         |
         |
         a.download
           img(src="img/icon-download-alt.png")
-          | 牌譜保存
+          | 保存牌谱
 
     .list
       .row
