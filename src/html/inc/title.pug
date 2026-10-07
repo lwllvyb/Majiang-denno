@@ -1,22 +1,22 @@
 #title
-  h1
-    img(src="img/logo.png" alt="電脳麻将")
+  h1.brand 辽宁穷胡
+  .subtitle 四人麻将 · 人机对战
   if page == 'autoplay'
-    div 自動対戦
+    div 自动对战演示
   if page == 'netplay'
-    div ネット対戦
+    div 网络对战
   .version ver. #{version}
-  .loading Loading data...
-  .start.hide(tabindex="0" role="button") START
+  .loading 加载中…
+  .start.hide(tabindex="0" role="button") 开始对局
   if page == 'netplay'
     .login.hide
       form.local(method="POST" action="server/auth/")
-        input(name="name" placeholder="プレーヤー名")
+        input(name="name" placeholder="玩家名")
         input(name="passwd" value="*" type="hidden")
-        input(type="submit" value="登録")
+        input(type="submit" value="注册")
       form.hatena(method="POST" action="server/auth/hatena")
         .logo
-        input(type="submit" value="Hatenaで登録")
+        input(type="submit" value="Hatena登录")
       form.google(method="POST" action="server/auth/google")
         .logo
-        input(type="submit" value="Googleで登録")
+        input(type="submit" value="Google登录")

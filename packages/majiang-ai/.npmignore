@@ -1,0 +1,9 @@
+.nyc_output/
+coverage/
+log*
+shan
+bin
+test/
+setver.sh
+test.sh
+rule.json

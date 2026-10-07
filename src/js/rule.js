@@ -70,16 +70,24 @@ function get_form() {
         }
 
         if ($(`input[name="${key}"]`).attr('type') == 'radio') {
-            rule[key] = + $(`input[name="${key}"]:checked`).val();
-            if ($(`input[name="${key}"]`).length == 2) {
-                rule[key] = rule[key] != 0;
+            let raw = $(`input[name="${key}"]:checked`).val();
+            // 规则类型 uses string values (辽宁穷胡 / 日本麻将)
+            if (key == '规则类型' || isNaN(raw)) {
+                rule[key] = raw;
+            }
+            else {
+                rule[key] = + raw;
+                if ($(`input[name="${key}"]`).length == 2) {
+                    rule[key] = rule[key] != 0;
+                }
             }
         }
         else if ($(`input[name="${key}"]`).attr('type') == 'checkbox') {
             rule[key] = $(`input[name="${key}"]`).prop('checked');
         }
         else {
-            rule[key] = + $(`input[name="${key}"]`).val();
+            let raw = $(`input[name="${key}"]`).val();
+            rule[key] = isNaN(raw) ? raw : + raw;
         }
     }
     return rule;

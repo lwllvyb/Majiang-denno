@@ -1,13 +1,50 @@
 .message.hide
-  | ルールを変更しました。
+  | 规则已更新。
 
 form.rule
   dl
-    dt プリセット
+    dt 预设
     dd
       select(name="プリセット")
-        option 電脳麻将ルール
-      input(type="button" name="プリセット" value="読込み")
+        option 辽宁穷胡
+        option 辽宁穷胡（严格）
+      input(type="button" name="プリセット" value="载入")
+  dl.liaoning
+    dt 规则类型
+    dd
+      label
+        input(name="规则类型" type="radio" value="辽宁穷胡" checked)
+        | 辽宁穷胡
+      label
+        input(name="规则类型" type="radio" value="日本麻将")
+        | 日本麻将（上游）
+    dt 穷胡底分
+    dd
+      input(name="穷胡底分" type="text" maxlength="3" value="2")
+    dt 三门齐
+    dd
+      label
+        input(name="三门齐" type="radio" value="0" checked)
+        | 关闭（默认）
+      label
+        input(name="三门齐" type="radio" value="1")
+        | 开启
+    dt 必须开门
+    dd
+      label
+        input(name="必须开门" type="radio" value="0" checked)
+        | 关闭（默认）
+      label
+        input(name="必须开门" type="radio" value="1")
+        | 开启
+    dt 有刻子
+    dd
+      label
+        input(name="有刻子" type="radio" value="0" checked)
+        | 关闭（默认）
+      label
+        input(name="有刻子" type="radio" value="1")
+        | 开启
   dl
     dt 配給原点
     dd
