@@ -13,7 +13,10 @@
     "test": "npm test --prefix packages/majiang-core -- --grep 辽宁",
     "test:all": "npm test --prefix packages/majiang-core",
     "start": "npm run build && npx --yes http-server dist -p 8080 -c-1",
-    "serve": "npx --yes http-server dist -p 8080 -c-1"
+    "serve": "npx --yes http-server dist -p 8080 -c-1",
+    "deploy": "npm run release && wrangler deploy",
+    "deploy:dry": "npm run release && wrangler deploy --dry-run",
+    "deploy:temporary": "npm run release && wrangler deploy --temporary"
   },
   "repository": {
     "type": "git",
@@ -40,7 +43,8 @@
     "stylus": "^0.64.0",
     "terser-webpack-plugin": "^5.6.1",
     "webpack": "^5.111.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "wrangler": "^4.148.0"
   },
   "dependencies": {
     "@kobalab/majiang-ai": "file:packages/majiang-ai",
