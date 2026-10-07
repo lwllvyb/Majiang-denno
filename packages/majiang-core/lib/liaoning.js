@@ -82,10 +82,7 @@ function allow_liaoning_hule(mianzi, rule) {
     if (! has_yaojiu_or_zipai(mianzi)) return false;
     if (rule['三门齐'] && ! has_sanmenqi(mianzi)) return false;
     if (rule['必须开门'] && ! has_kaimen(mianzi)) return false;
-    if (rule['有刻子'] && ! has_kezi(mianzi) && ! is_piaohu(mianzi)) {
-        // 飘胡 already has kezi; when 有刻子 is on, require a pung
-        return false;
-    }
+    if (rule['有刻子'] && ! has_kezi(mianzi)) return false;
     return true;
 }
 
