@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // 辽宁穷胡 — 纯静态站（多页 HTML），无 Worker 脚本
+  "name": "majiang-liaoning",
+  "compatibility_date": "2026-10-07",
+  "assets": {
+    "directory": "./dist",
+    // 多页站点：不要用 single-page-application
+    // 默认未命中资源返回 404；html_handling 让 /rule → rule.html
+    "html_handling": "auto-trailing-slash"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

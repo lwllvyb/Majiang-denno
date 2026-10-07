@@ -1,0 +1,37 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Release build
+        run: npm run release
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
+        # Requires repo secrets:
+        #   CLOUDFLARE_API_TOKEN  — Workers 部署权限的 API Token
+        #   CLOUDFLARE_ACCOUNT_ID — Cloudflare 账号 ID（可选但推荐）
